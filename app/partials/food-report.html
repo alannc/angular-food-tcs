@@ -1,0 +1,16 @@
+<h1>Basic Report</h1>
+<h3>{{ foodName }}</h3>
+<table class="table">
+  <thead>
+    <td><b>Name</b></td>
+    <td><b>Group</b></td>
+    <td><b>Unit</b></td>
+    <td><b>Value</b></td>
+  </thead>
+  <tr ng-repeat="foodNutrient in foodNutrients">
+    <td>{{ foodNutrient.name }}</td>
+    <td>{{ foodNutrient.group }}</td>
+    <td>{{ foodNutrient.unit }}</td>
+    <td>{{ foodNutrient.value }}</td>
+  </tr>
+</table>

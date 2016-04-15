@@ -1,0 +1,29 @@
+<h1>FoodList // <a href="#/favorite">My Favorite Food</a></h1>
+<form novalidate class="simple-form">
+    <label>Search food:</label><br />
+    <input type="text" ng-model="searchWord" /><br/>
+    <label>Cant:</label>
+    <select ng-model='cant'
+      required ng-options='option.value as option.name for option in cantOptions'>
+    </select><br>
+    <input class="btn btn-primary" type="submit" ng-click="loadFood(searchWord, cant)" value="Search" />
+
+</form>
+</br />
+<table class="table">
+  <thead>
+    <td><b>Name</b></td>
+    <td><b>Group</b></td>
+    <td><b>Favorite</b></td>
+    <td><b>Basic Report</b></td>
+  </thead>
+  <tr ng-repeat="food in foodArray">
+    <td>{{ food.name }}</td>
+    <td>{{ food.group }}</td>
+    <td><a ng-click="favorite(food)" target="=_blank"><3</a></td>
+    <td><a href="#/food/{{ food.ndbno }}" target="=_blank">View</a></td>
+  </tr>
+</table>
+<div ng-show="{{ noData }}">
+  <p> No data found.</p>
+</div>

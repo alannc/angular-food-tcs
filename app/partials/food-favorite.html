@@ -1,0 +1,16 @@
+<h1>Favorited Food // <a href="#/">Search Food</a></h1>
+<h3>{{ foodName }}</h3>
+<table class="table">
+  <thead>
+    <td><b>Name</b></td>
+    <td><b>Group</b></td>
+    <td><b>Favorite</b></td>
+    <td><b>Basic Report</b></td>
+  </thead>
+  <tr ng-repeat="food in foodFavorite track by $index">
+    <td>{{ food.name }}</td>
+    <td>{{ food.group }}</td>
+    <td><a ng-click="unfavorite(food.ndbno)" target="=_blank">&lt;/3</a></td>
+    <td><a href="#/food/{{ food.ndbno }}" target="=_blank">View</a></td>
+  </tr>
+</table>
